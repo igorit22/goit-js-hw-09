@@ -1,0 +1,64 @@
+body {
+  font-family: Roboto Slab;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.timer {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.value {
+  font-size: 36px;
+}
+
+.label {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer-btn {
+  margin-left: 15px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f70404;
+  background: rgb(59, 187, 59);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.timer-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+.timer-input {
+    margin-left: 15px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.notiflix-notify-warning {
+  background-color: rgb(39, 128, 245) !important;
+}
