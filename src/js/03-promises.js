@@ -14,7 +14,7 @@ function createPromise(position, delay) {
 }
 
 const form = document.querySelector('.form');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', event => {
   event.preventDefault();
   const delay = Number(event.target.elements.delay.value);
   const step = Number(event.target.elements.step.value);

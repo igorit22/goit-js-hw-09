@@ -107,21 +107,19 @@ flatpickr(datePicker, {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const flatpickrObj = datePicker._flatpickr;
-  
+
     if (isDateValid(selectedDates[0])) {
       startButton.removeAttribute('disabled');
       startButton.style.opacity = '1';
       flatpickrObj._input.blur();
     } else {
       startButton.setAttribute('disabled', true);
-  startButton.style.opacity = '0.5';
-  Notiflix.Notify.failure('Please choose a valid date');
-}
-
-},
+      startButton.style.opacity = '0.5';
+      Notiflix.Notify.failure('Please choose a valid date');
+    }
+  },
 });
 
 resetButton.addEventListener('click', () => {
   location.reload();
 });
-
