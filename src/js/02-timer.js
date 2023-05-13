@@ -11,8 +11,6 @@ const secondsValue = document.querySelector('[data-seconds]');
 
 let timer;
 
-// 
-
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -91,11 +89,13 @@ startButton.addEventListener('click', () => {
   startButton.setAttribute('disabled', true);
   startButton.style.opacity = '0.5';
   Notiflix.Notify.success('Congratulations! Your timer has started.');
+  datePicker.setAttribute('disabled', true);
 
   setTimeout(() => {
     stopCountDown();
     startButton.removeAttribute('disabled');
     startButton.style.opacity = '1';
+    datePicker.removeAttribute('disabled');
   }, selectedDate - Date.now());
 });
 
