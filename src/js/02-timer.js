@@ -4,6 +4,7 @@ import Notiflix from 'notiflix';
 
 const datePicker = document.getElementById('datetime-picker');
 const startButton = document.querySelector('[data-start]');
+const resetButton = document.querySelector('[data-reset]');
 const daysValue = document.querySelector('[data-days]');
 const hoursValue = document.querySelector('[data-hours]');
 const minutesValue = document.querySelector('[data-minutes]');
@@ -69,6 +70,7 @@ function stopCountDown() {
   clearInterval(timer);
   Notiflix.Notify.warning('The timer has finished counting down.');
   localStorage.setItem('startButtonDisabled', 'true');
+  datePicker.removeAttribute('disabled');
 }
 
 if (localStorage.getItem('startButtonDisabled')) {
@@ -93,9 +95,8 @@ startButton.addEventListener('click', () => {
 
   setTimeout(() => {
     stopCountDown();
-    startButton.removeAttribute('disabled');
-    startButton.style.opacity = '1';
-    datePicker.removeAttribute('disabled');
+    startButton.setAttribute('disabled', true);
+    startButton.style.opacity = '0.5';
   }, selectedDate - Date.now());
 });
 
@@ -105,13 +106,22 @@ flatpickr(datePicker, {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
+    const flatpickrObj = datePicker._flatpickr;
+  
     if (isDateValid(selectedDates[0])) {
       startButton.removeAttribute('disabled');
       startButton.style.opacity = '1';
+      flatpickrObj._input.blur();
     } else {
       startButton.setAttribute('disabled', true);
-      startButton.style.opacity = '0.5';
-      Notiflix.Notify.failure('Please choose a valid date');
-    }
-  },
+  startButton.style.opacity = '0.5';
+  Notiflix.Notify.failure('Please choose a valid date');
+}
+
+},
 });
+
+resetButton.addEventListener('click', () => {
+  location.reload();
+});
+

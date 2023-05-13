@@ -46,7 +46,7 @@ h1 {
   letter-spacing: 1px;
 }
 
-.timer-btn {
+/* .timer-btn {
   padding: 0;
   border: none;
   cursor: pointer;
@@ -58,6 +58,23 @@ h1 {
   height: 75px;
   border-radius: 50%;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+} */
+
+.timer-btn {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(59, 187, 59);
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.timer-btn:hover {
+  background-color: rgb(46, 151, 46);
 }
 
 .timer-btn[disabled] {
@@ -66,7 +83,7 @@ h1 {
 }
 
 .timer-input {
-  margin-right: 25px;
+  margin-right: 20px;
   font-size: 18px;
   font-weight: 400;
   width: 200px;
@@ -74,4 +91,20 @@ h1 {
 
 .notiflix-notify-warning {
   background-color: rgb(39, 128, 245) !important;
+}
+
+.reset-btn {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #d32f2f;
 }
